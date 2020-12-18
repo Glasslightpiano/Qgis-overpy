@@ -1,0 +1,11 @@
+import overpy
+api = overpy.Overpass()
+result = api.query('''
+[out:json];
+(
+ node["man_made"="lighthouse"];
+);
+out body;
+>;
+out skel qt;''')
+print(result.nodes)
